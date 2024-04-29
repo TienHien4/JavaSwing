@@ -44,6 +44,8 @@ public class FileData {
     public FileData() {
         try {
             file = new File("C:\\Users\\GiGa\\eclipse-workspace\\JavaSwing\\src\\DanhSachSanPham.txt");
+            FileInputStream fos = new FileInputStream(file);
+            ObjectInputStream oos = new ObjectInputStream(fos);
             getDanhSachSanPham();
         } catch (Exception e) {
             e.printStackTrace();
@@ -51,6 +53,8 @@ public class FileData {
 
         try {
             file1 = new File("C:\\Users\\GiGa\\eclipse-workspace\\JavaSwing\\src\\DanhSachNhanVien.txt");
+            FileInputStream fos = new FileInputStream(file1);
+            ObjectInputStream oos = new ObjectInputStream(fos);
             getDanhSachNhanVien();
         } catch (Exception e) {
             e.printStackTrace();
@@ -58,6 +62,8 @@ public class FileData {
 
         try {
             file2 = new File("C:\\Users\\GiGa\\eclipse-workspace\\JavaSwing\\src\\DanhSachThuChi.txt");
+            FileInputStream fos = new FileInputStream(file2);
+            ObjectInputStream oos = new ObjectInputStream(fos);
             getDanhSachThuChi();
         } catch (Exception e) {
             e.printStackTrace();
@@ -65,6 +71,8 @@ public class FileData {
 
         try {
             file3 = new File("C:\\Users\\GiGa\\eclipse-workspace\\JavaSwing\\src\\DanhSachHoaDon.txt");
+            FileInputStream fos = new FileInputStream(file3);
+            ObjectInputStream oos = new ObjectInputStream(fos);
             getDanhSachHoaDon();
         } catch (Exception e) {
             e.printStackTrace();

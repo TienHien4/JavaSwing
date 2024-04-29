@@ -31,7 +31,7 @@ public class FrameDangNhap extends javax.swing.JFrame {
     private void checkLogin(){
         String username = tfTenDangNhap.getText().trim();
         String password = tfMatKhau.getText();
-        qlDangNhap.login(0, username);
+        qlDangNhap.login(0, "");
         this.hide();
 //        if (username.length() == 0 || password.length() == 0) {
 //            JOptionPane.showMessageDialog(null, "Hãy Điền Đầy Đủ Thông Tin ", "Thông Báo", JOptionPane.INFORMATION_MESSAGE);

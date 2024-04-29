@@ -24,7 +24,7 @@ public class NhanVien {
     private String matKhau;
     private int luongTheoThang;
 
-    public NhanVien(String maNhanVien, String tenNhanVien, String gioiTinh, String ngaySinh, String diaChi, String chucVu, String email, String soDienThoai, String tenDangNhap, String matKhau, int luongTheoThang) {
+    public NhanVien(String maNhanVien, String tenNhanVien, String gioiTinh, String email, String soDienThoai, String tenDangNhap, String matKhau) {
         this.maNhanVien = maNhanVien;
         this.tenNhanVien = tenNhanVien;
         this.gioiTinh = gioiTinh;

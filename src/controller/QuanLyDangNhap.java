@@ -43,10 +43,13 @@ public class QuanLyDangNhap {
     }
     
     public void login(int type,String user){
-
+        if (type == 1){
+            FrameNhanVien fr = new FrameNhanVien(user);
+            fr.setVisible(true);
+        } else {
             FrameQuanLy fr = new FrameQuanLy();
             fr.setVisible(true);
-
+        }
     }
     
     public void logout(){

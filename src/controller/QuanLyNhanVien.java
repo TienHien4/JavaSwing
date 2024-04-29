@@ -57,7 +57,7 @@ public class QuanLyNhanVien {
     public void themNhanVien(NhanVien nv) {
         nhanVienQL.themNhanVien(nv);
         load_NhanVien();
-        FrameQuanLy.showThongKeNV(thongKe());
+    
     }
     
     public void suaThongTinNhanVien(int index){
@@ -73,14 +73,12 @@ public class QuanLyNhanVien {
     public void xoaNhanVien(int index) {
         nhanVienQL.xoaNhanVien(index);
         load_NhanVien();
-        FrameQuanLy.showThongKeNV(thongKe());
+       
     }
      
     public void writeNhanVienToFile() {
         nhanVienQL.writeNhanVienToFile();
     }
     
-    public ArrayList thongKe(){
-        return nhanVienQL.thongKe();
-    }
+   
 }

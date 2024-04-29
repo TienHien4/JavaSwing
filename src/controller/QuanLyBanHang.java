@@ -11,6 +11,7 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import model.HoaDon;
 import model.HoaDonQL;
+import model.SanPham;
 import view.FrameChiTietHoaDon;
 
 /**
@@ -70,4 +71,3 @@ public class QuanLyBanHang {
         fr.setVisible(true);
     }
 }
-

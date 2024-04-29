@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package view;
+
+
 import controller.QuanLyBanHang;
 import controller.QuanLyDangNhap;
 import controller.QuanLyNhanVien;
@@ -587,7 +589,7 @@ public class FrameNhanVien extends javax.swing.JFrame {
         btnXacNhan7.setText("Xác Nhận");
         btnXacNhan7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnXacNhan7ActionPerformed(evt);
+               
             }
         });
 
@@ -1073,30 +1075,7 @@ public class FrameNhanVien extends javax.swing.JFrame {
         tfThemSoLuong.setText("");
     }//GEN-LAST:event_btThemVaoGioHangActionPerformed
 
-    private void btnXacNhan7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXacNhan7ActionPerformed
-        ArrayList<SanPham> listSanPhamTrongHoaDon = getListSPTrongHD();
-        long tongTien = 0;
-        for (int i = 0; i < listSanPhamTrongHoaDon.size(); i++) {
-            SanPham sp = listSanPhamTrongHoaDon.get(i);
-            tongTien += sp.getGiaBan() * sp.getSoLuong();
-        }
-        if (!listSanPhamTrongHoaDon.isEmpty()) {
-            String maHoaDon = setMaHoaDon();
-            String ngay = getCurrentDate();
-            try {
-                qlBanHang.taoHoaDon(new HoaDon(maHoaDon, ngay, listSanPhamTrongHoaDon, tongTien));
-        
-            } catch (IOException ex) {
-                Logger.getLogger(FrameNhanVien.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-        listSanPhamTrongHoaDon.clear();
-        tfTongTien.setText(tongTien + "");
-        DefaultTableModel model = (DefaultTableModel) tableBanHang.getModel();
-        model.setRowCount(0);
-        tfThemMaSanPham.setText("");
-        tfThemSoLuong.setText("");
-    }//GEN-LAST:event_btnXacNhan7ActionPerformed
+   
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         int i = JOptionPane.showConfirmDialog(null, "Bạn Có Muốn Thoát", "Thông Báo", JOptionPane.YES_NO_OPTION);
@@ -1206,6 +1185,7 @@ public class FrameNhanVien extends javax.swing.JFrame {
     }
 
    
+
     private String getCurrentDate() {
         DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
         Date dates = new Date();
