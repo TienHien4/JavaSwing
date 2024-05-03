@@ -11,10 +11,7 @@ import view.FrameDangNhap;
 import view.FrameNhanVien;
 import view.FrameQuanLy;
 
-/**
- *
- * @author tungb_000
- */
+
 public class QuanLyDangNhap {
     
     QuanLyNhanVien qlnv;
@@ -28,9 +25,10 @@ public class QuanLyDangNhap {
     }
     
     public int Login(String username, String password) {
+    	String ma = "1";
         for (int i = 0; i < ds_NhanVien.size(); i++) {
             if (username.equals(ds_NhanVien.get(i).getTenDangNhap()) && password.equals((ds_NhanVien.get(i).getMatKhau()))) {
-                if (ds_NhanVien.get(i).getChucVu().equalsIgnoreCase("Quản Lý") || ds_NhanVien.get(i).getChucVu().equalsIgnoreCase("Giám Đốc")){
+                if (ds_NhanVien.get(i).getMaNhanVien().compareTo(ma)==0){
                     isQuanLi = true; isNhanVien = false;
                     return 0;
                 } else {
@@ -39,14 +37,14 @@ public class QuanLyDangNhap {
                 }
             }
         }
-        return 2;
+        return 0;
     }
     
     public void login(int type,String user){
         if (type == 1){
             FrameNhanVien fr = new FrameNhanVien(user);
             fr.setVisible(true);
-        } else {
+        } if(type == 0) {
             FrameQuanLy fr = new FrameQuanLy();
             fr.setVisible(true);
         }

@@ -6,13 +6,15 @@
 package model;
 
 import Data.FileData;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author tungb_000
  */
-public class SanPhamQL {
+public class SanPhamQL implements Serializable{
     private FileData file;
     
     public SanPhamQL() {

@@ -5,11 +5,13 @@
  */
 package model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author tungb_000
  */
-public class DiaNhac extends SanPham{
+public class DiaNhac extends SanPham implements Serializable{
     private String tenCaSy;
     private String theLoai;
 

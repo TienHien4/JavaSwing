@@ -6,6 +6,8 @@
 package model;
 
 import Data.FileData;
+
+import java.io.Serializable;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -15,7 +17,7 @@ import java.util.Date;
  *
  * @author tungb_000
  */
-public class ThuChiQL {
+public class ThuChiQL implements Serializable{
     
     FileData file;
     

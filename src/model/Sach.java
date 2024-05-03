@@ -5,11 +5,13 @@ Sách * To change this license header, choose License Headers in Project Propert
  */
 package model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author tungb_000
  */
-public class Sach extends SanPham{
+public class Sach extends SanPham implements Serializable{
     private String tacGia;
     private String nhaXuatBan;
 

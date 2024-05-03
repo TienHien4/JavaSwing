@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Administrator
+ *
  */
 public class FrameDangNhap extends javax.swing.JFrame {
 
@@ -31,19 +31,18 @@ public class FrameDangNhap extends javax.swing.JFrame {
     private void checkLogin(){
         String username = tfTenDangNhap.getText().trim();
         String password = tfMatKhau.getText();
-        qlDangNhap.login(0, "");
-        this.hide();
-//        if (username.length() == 0 || password.length() == 0) {
-//            JOptionPane.showMessageDialog(null, "Hãy Điền Đầy Đủ Thông Tin ", "Thông Báo", JOptionPane.INFORMATION_MESSAGE);
-//        } else if (qlDangNhap.Login(username, password) == 0) {
-//            qlDangNhap.login(0, "");
-//            this.hide();
-//        } else if (qlDangNhap.Login(username, password) == 1) {
-//            qlDangNhap.login(1, username);
-//            this.hide();
-//        } else {
-//            JOptionPane.showMessageDialog(null, "Sai Tên Đăng Nhập Hoặc Mật Khẩu", "Thông Báo", JOptionPane.ERROR_MESSAGE);
-//        }
+        
+        if (username.length() == 0 || password.length() == 0) {
+          JOptionPane.showMessageDialog(null, "Hãy Điền Đầy Đủ Thông Tin ", "Thông Báo", JOptionPane.INFORMATION_MESSAGE);
+      } else if (qlDangNhap.Login(username, password) == 0) {
+          qlDangNhap.login(0, "");
+          this.hide();
+      } else if (qlDangNhap.Login(username, password) == 1) {
+          qlDangNhap.login(1, username);
+          this.hide();
+      } else {
+          JOptionPane.showMessageDialog(null, "Sai Tên Đăng Nhập Hoặc Mật Khẩu", "Thông Báo", JOptionPane.ERROR_MESSAGE);
+      }
     }
     
     /**

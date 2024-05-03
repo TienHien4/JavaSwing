@@ -18,7 +18,7 @@ import model.SanPham;
 
 /**
  *
- * @author Administrator
+ * 
  */
 public class FrameChiTietSanPham extends javax.swing.JFrame {
 

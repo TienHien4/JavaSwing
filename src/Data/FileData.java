@@ -2,6 +2,7 @@ package Data;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.EOFException;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -46,7 +47,12 @@ public class FileData {
             file = new File("C:\\Users\\GiGa\\eclipse-workspace\\JavaSwing\\src\\DanhSachSanPham.txt");
             FileInputStream fos = new FileInputStream(file);
             ObjectInputStream oos = new ObjectInputStream(fos);
+            oos.close();
+            fos.close();
             getDanhSachSanPham();
+        } catch (EOFException ignored) {
+            
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -55,7 +61,12 @@ public class FileData {
             file1 = new File("C:\\Users\\GiGa\\eclipse-workspace\\JavaSwing\\src\\DanhSachNhanVien.txt");
             FileInputStream fos = new FileInputStream(file1);
             ObjectInputStream oos = new ObjectInputStream(fos);
+            oos.close();
+            fos.close();
             getDanhSachNhanVien();
+        } catch (EOFException ignored) {
+            
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -64,7 +75,12 @@ public class FileData {
             file2 = new File("C:\\Users\\GiGa\\eclipse-workspace\\JavaSwing\\src\\DanhSachThuChi.txt");
             FileInputStream fos = new FileInputStream(file2);
             ObjectInputStream oos = new ObjectInputStream(fos);
+            oos.close();
+            fos.close();
             getDanhSachThuChi();
+        } catch (EOFException ignored) {
+            
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -73,7 +89,12 @@ public class FileData {
             file3 = new File("C:\\Users\\GiGa\\eclipse-workspace\\JavaSwing\\src\\DanhSachHoaDon.txt");
             FileInputStream fos = new FileInputStream(file3);
             ObjectInputStream oos = new ObjectInputStream(fos);
+            oos.close();
+            fos.close();
             getDanhSachHoaDon();
+        } catch (EOFException ignored) {
+            
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -90,6 +111,7 @@ public class FileData {
             oos.writeObject(ds_Sach);
             oos.close();
             fos.close();
+        
         } catch (Exception ex) {
             Logger.getLogger(FileData.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -102,6 +124,9 @@ public class FileData {
             ds_Sach = (ArrayList<Sach>) ois.readObject();
             ois.close();
             fis.close();
+        } catch (EOFException ignored) {
+            
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -130,6 +155,9 @@ public class FileData {
             ds_NhanVien = (ArrayList<NhanVien>) ois.readObject();
             ois.close();
             fis.close();
+        } catch (EOFException ignored) {
+            
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -158,6 +186,9 @@ public class FileData {
             ds_ThuChi = (ArrayList  <ThuChi>) ois.readObject();
             ois.close();
             fis.close();
+        } catch (EOFException ignored) {
+            
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -186,6 +217,9 @@ public class FileData {
             ds_HoaDon = (ArrayList<HoaDon>) ois.readObject();
             ois.close();
             fis.close();
+        } catch (EOFException ignored) {
+            
+
         } catch (Exception e) {
             e.printStackTrace();
         }

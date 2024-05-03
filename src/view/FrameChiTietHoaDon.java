@@ -13,7 +13,7 @@ import model.SanPham;
 
 /**
  *
- * @author tungb_000
+ * 
  */
 public class FrameChiTietHoaDon extends javax.swing.JFrame {
     

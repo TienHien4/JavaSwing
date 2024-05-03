@@ -5,6 +5,7 @@
  */
 package model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -12,7 +13,7 @@ import java.util.Date;
  *
  * @author tungb_000
  */
-public class HoaDon {
+public class HoaDon implements Serializable{
     private String maHoaDon;
     private String ngay; 
     private ArrayList<SanPham> ds_SanPham;

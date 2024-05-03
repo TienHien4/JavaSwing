@@ -5,11 +5,13 @@
  */
 package model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author tungb_000
  */
-public class ThuChi {
+public class ThuChi implements Serializable{
     private String tenChiPhi;
     private long mucChiPhi;
     private String loaichiphi;

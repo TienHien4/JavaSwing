@@ -6,13 +6,14 @@
 package model;
 
 import Data.FileData;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author tungb_000
  */
-public class NhanVienQL {
+public class NhanVienQL implements Serializable{
     private FileData file;
 
     public NhanVienQL() {

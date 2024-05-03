@@ -7,6 +7,7 @@ package model;
 
 import Data.FileData;
 import java.io.IOException;
+import java.io.Serializable;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -16,7 +17,7 @@ import java.util.Date;
  *
  * @author tungb_000
  */
-public class HoaDonQL {
+public class HoaDonQL implements Serializable{
     
     FileData file;
     

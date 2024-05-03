@@ -29,7 +29,7 @@ import java.awt.Font;
 
 /**
  *
- * @author Administrator
+ * 
  */
 public class FrameChiTietNhanVien extends javax.swing.JFrame {
 
