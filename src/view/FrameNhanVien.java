@@ -153,12 +153,6 @@ public class FrameNhanVien extends javax.swing.JFrame {
         lbNgayThangNam = new javax.swing.JLabel();
         lbchao = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        miThongTin = new javax.swing.JMenuItem();
-        miDangXuat = new javax.swing.JMenuItem();
-        jSeparator1 = new javax.swing.JPopupMenu.Separator();
-        jMenuItem3 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("PHẦN MỀM QUẢN LÝ BÁN HÀNG");
@@ -659,42 +653,6 @@ public class FrameNhanVien extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(102, 102, 0));
         jLabel4.setText("Xin Chào :");
 
-        jMenuBar1.setBackground(new java.awt.Color(204, 255, 255));
-
-        jMenu1.setText("Tùy Chọn");
-
-        miThongTin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/user.png"))); // NOI18N
-        miThongTin.setText("Thay Đổi Thông Tin ");
-        miThongTin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                miThongTinActionPerformed(evt);
-            }
-        });
-        jMenu1.add(miThongTin);
-
-        miDangXuat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/logout.png"))); // NOI18N
-        miDangXuat.setText("Đăng Xuất");
-        miDangXuat.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                miDangXuatActionPerformed(evt);
-            }
-        });
-        jMenu1.add(miDangXuat);
-        jMenu1.add(jSeparator1);
-
-        jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/exit.png"))); // NOI18N
-        jMenuItem3.setText("Thoát");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
-            }
-        });
-        jMenu1.add(jMenuItem3);
-
-        jMenuBar1.add(jMenu1);
-
-        setJMenuBar(jMenuBar1);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -948,38 +906,6 @@ public class FrameNhanVien extends javax.swing.JFrame {
         tfThemSoLuong.setText("");
     }//GEN-LAST:event_btThemVaoGioHangActionPerformed
 
-   
-
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        int i = JOptionPane.showConfirmDialog(null, "Bạn Có Muốn Thoát", "Thông Báo", JOptionPane.YES_NO_OPTION);
-        if (i == JOptionPane.YES_OPTION) {
-            qlSanPham.writeSanPhamToFile();
-            qlNhanVien.writeNhanVienToFile();
-            //qlBanHang.writeHoaDonToFile();
-            qlThuChi.writeThuChiToFile();
-            System.exit(0);
-        }
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
-
-    private void miDangXuatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miDangXuatActionPerformed
-        // TODO add your handling code here:
-        qlSanPham.writeSanPhamToFile();
-        qlNhanVien.writeNhanVienToFile();
-        //qlBanHang.writeHoaDonToFile();
-        qlThuChi.writeThuChiToFile();
-        qlDangNhap.logout();
-        this.setVisible(false);
-    }//GEN-LAST:event_miDangXuatActionPerformed
-
-    private void miThongTinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miThongTinActionPerformed
-        for (int i = 0; i < ds_NhanVien.size(); i++) {
-            if (ds_NhanVien.get(i).getTenDangNhap().equals(user)) {
-                qlNhanVien.suaThongTinNhanVien(i);
-                break;
-            }
-        }
-    }//GEN-LAST:event_miThongTinActionPerformed
-
     private void cbThemVaoHoaDonLoaiSanPhamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbThemVaoHoaDonLoaiSanPhamActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cbThemVaoHoaDonLoaiSanPhamActionPerformed
@@ -1090,9 +1016,6 @@ public class FrameNhanVien extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel2;
@@ -1100,7 +1023,6 @@ public class FrameNhanVien extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane8;
-    private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel lbNgayThangNam;
     private javax.swing.JLabel lbchao;
@@ -1113,8 +1035,6 @@ public class FrameNhanVien extends javax.swing.JFrame {
     private javax.swing.JLabel lbthem1;
     private javax.swing.JLabel lbthem2;
     private javax.swing.JLabel lbthem3;
-    private javax.swing.JMenuItem miDangXuat;
-    private javax.swing.JMenuItem miThongTin;
     private javax.swing.JPanel pnChiTietBanHang7;
     private javax.swing.JPanel pnKhachHang6;
     private javax.swing.JPanel pnThongTinSPBanHang;

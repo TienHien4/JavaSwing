@@ -1,6 +1,4 @@
 package Data;
-
-import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.EOFException;
 import java.io.File;
@@ -26,14 +24,9 @@ import model.NhanVien;
 import model.Sach;
 import model.SanPham;
 import model.ThuChi;
-
-/**
- *
- * @author tungb_000
- */
 public class FileData {
 
-    //public static ArrayList<SanPham> ds_SanPham = new ArrayList<SanPham>();
+   
     public static ArrayList<NhanVien> ds_NhanVien = new ArrayList<>(); //type = 0
     public static ArrayList<DiaNhac> ds_DiaNhac = new ArrayList<>(); //type = 1
     public static ArrayList<DiaPhim> ds_DiaPhim = new ArrayList<>(); // type = 2
@@ -65,10 +58,8 @@ public class FileData {
             fos.close();
             getDanhSachNhanVien();
         } catch (EOFException ignored) {
-            
-
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (IOException e) {
+        	System.out.println(e.getMessage());
         }
 
         try {
@@ -143,8 +134,8 @@ public class FileData {
             oos.writeObject(ds_NhanVien);
             oos.close();
             fos.close();
-        } catch (Exception ex) {
-            Logger.getLogger(FileData.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
         }
     }
 

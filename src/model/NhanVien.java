@@ -8,10 +8,7 @@ package model;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- *
- * @author tungb_000
- */
+
 public class NhanVien implements Serializable{
     private String maNhanVien;
     private String tenNhanVien;
