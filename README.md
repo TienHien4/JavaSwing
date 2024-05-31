@@ -125,3 +125,57 @@ int main(){
 	string s = "hi";
 	A4(p, t, s);
 }
+
+
+
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+int A1(string s){
+	if(s.length()%2!=0) return 0;
+	else{
+		int l = 0;
+		int r = s.length() - 1;
+		while(l<r){
+			if(s[l]!=s[r]){
+				return 0;
+				break;
+			} 
+			l++;
+			r--;
+		}
+	}
+	return 1;
+}
+
+void A2(string s, int k){
+	
+	if(A1(s)==1){
+		cout<<"s la xau dx"<<endl;
+		for(int i=0; i<=s.length()-1; i++){
+		    cout<<s[i];
+	    }
+    }
+	else{
+		int l = k-1;
+		int r = k;
+		string s1;
+		while(l>0 || r<s.length()-1){
+			if(s[l]!=s[r]){
+				break;
+				
+			}else{
+				cout<<s[l]<<"-"<<s[r]<<endl;
+				l--;
+				r++;
+			}
+		}
+		
+	    }
+	}
+
+int main(){
+	string s = "sdffmoomsdfsd";
+	A2(s, 6);
+}
