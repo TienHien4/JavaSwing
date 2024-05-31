@@ -68,3 +68,60 @@ int main(){
 	int b[100];  
 	TruyVet(a, n, f, b);
 }
+
+
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+int A3(string p, string s){
+	int count2 = 0;
+	int l1 = p.length();
+	int l2 = s.length();
+	for(int i=0; i<=l1-1; i++){
+		int count1 = 0;
+		for(int j=0; j<=l2-1; j++){		
+			if(p[i+j] == s[j]){
+				count1++;
+			}
+			else if(p[i+j] != s[j]) break;
+		}
+		if(count1==s.length()) count2++;
+	}
+	return count2;
+	
+}
+void A4(string p, string t, string s){
+	int dd[100] = {0};
+	int l1 = p.length();
+	cout<<l1<<endl;
+	int l2 = s.length();
+	int l3 = t.length();
+	for(int i=0; i<=p.length(); i++){
+		
+		int count1 = 0;
+		for(int j=0; j<=l2-1; j++){		
+			if(p[i+j] == s[j]){
+				count1++;
+			}
+			else if(p[i+j] != s[j]) break;
+		}
+		
+		if(count1==s.length()){
+			p.replace(i, l2, "hello");
+		}
+	}
+	
+	for(int i=0; i<=p.length(); i++){
+		cout<<p[i];
+	}
+	cout<<endl;
+	cout<<p.length();
+}
+
+int main(){
+	string p = "hiadaisadhigdhgdfg";
+	string t = "hello";
+	string s = "hi";
+	A4(p, t, s);
+}
