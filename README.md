@@ -179,3 +179,60 @@ int main(){
 	string s = "sdffmoomsdfsd";
 	A2(s, 6);
 }
+
+
+ #include <bits/stdc++.h>
+using namespace std;
+
+struct Quat{
+	string tenHangSanXuat;
+	long giaBan;
+	string mauSac;
+};
+
+Quat d[]={{"LG",3750000,"trang"},
+				{"Toshiba",1500000,"green"},
+				{"Daikin",1350000,"gray"},
+				{"Casper",950000,"black"},
+				{"Sanaky",625000,"trang"},
+				{"Sanyo",375000,"black"}}; 
+				
+bool ThamLam(Quat d[], int n, long p, int *S){
+	for(int i=0;i<n; i++)
+		S[i]=0;
+	int i=0;
+	while(p>0 && i<n){
+		S[i]=p/d[i].giaBan; 
+		p=p-S[i]*d[i].giaBan; 
+		i++; 
+	}
+	if(p>0)
+		return false;
+	else return true;
+}
+
+//void ThamLam(Quat d[], int n, long p, int *S){
+//	for(int i=0;i<n; i++)
+//		S[i]=0;
+//	int i=0;
+//	while(p>0 && i<n){
+//		S[i]=p/d[i].giaBan; cout<<S[i]<<" ";
+//		p=p-S[i]*d[i].giaBan; cout<<p<<" ";
+//		i++; cout<<i<<endl;
+//	}
+//}
+
+int main(){
+	int n=6;
+	int p=2825000;
+	int S[n];
+	cout<<"So luong ban"<<setw(30)<<"Ten hang san xuat\t"<<setw(30)<<"Gia ban\t"<<endl;
+	if(ThamLam(d,n,p,S)){
+		for(int i=0; i<n; i++){
+			if(S[i]!=0)
+				cout<<S[i]<<setw(30)<<d[i].tenHangSanXuat<<setw(30)<<d[i].giaBan<<endl;
+		}
+	} else cout<<"Khong tim duoc so luong va danh sach cac quat can ban de duoc so tien dung bang "<<p<<endl;
+//	ThamLam(d,n,p,S);
+	return 0;
+}
