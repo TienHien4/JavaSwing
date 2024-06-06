@@ -236,3 +236,67 @@ int main(){
 //	ThamLam(d,n,p,S);
 	return 0;
 }
+#include <iostream>
+using namespace std;
+
+struct Laptop {
+    string brand;
+    string config;
+    int price;
+};
+
+int char_in_string(char c, string s) {
+    int i = 0;
+    while (i < s.length()) {
+        if (s[i] == c) {
+            return i;
+        }
+        i++;
+    }
+    return -1;
+}
+
+bool BMH(string P, string T) {
+    int v = P.length(), i = v - 1;
+    int x;
+
+    while (i < T.length()) {
+        int k = v - 1;
+        int j = i;
+        while (k > -1 && T[j] == P[k]) {
+            j--; k--;
+        }
+
+        if (k < 0) return true;
+
+        else {
+            x = char_in_string(T[i], P);
+            if (x < 0) i = i + v;
+            else i = i + v - x - 1;
+        }
+    }
+
+    return false;
+}
+
+int Dem(Laptop laptops[], int size) {
+    string target = "16GB-SSD";
+    int count = 0;
+    for (int i = 0; i < size; ++i) {
+        if (BMH(target, laptops[i].config)) {
+            count++;
+        }
+    }
+    return count;
+}
+
+int main() {
+    const int n = 3;
+    Laptop laptops[n] = {
+        {"HP", "CPU 2.5GHz upto 3.5GHz-RAM 16GB-SSD 512GB", 15000000},
+        {"ACER", "CPU 2.5GHz upto 3.5GHz-RAM 8GB-HDD 2TB", 12000000},
+        {"DELL", "CPU 3.0GHz upto 4.0GHz-RAM 16GB-SSD 1TB", 20000000}
+    };
+    cout << Dem(laptops, n) << endl;
+    return 0;
+}
